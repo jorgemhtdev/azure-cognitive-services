@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#F3F4FA"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Quotes.Features.QuoteView">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="80,*">
+
+            <Frame CornerRadius="15" HasShadow="False">
+                <Label VerticalTextAlignment="End" Text="Quotes" />
+            </Frame>
+
+            <CollectionView Grid.Row="1" Margin="20,0,0,0"  SelectionMode="Single" SelectionChanged="selectionQuote" x:Name="collectionViewQuotes" >
+                <CollectionView.Header>
+                    <StackLayout HeightRequest="60">
+                        <Label FontSize="Medium" FontAttributes="Bold" VerticalOptions="CenterAndExpand"
+                            Text="Famous Quotes" />
+                    </StackLayout>
+                </CollectionView.Header>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="20" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView>
+                            <Frame HeightRequest="60" Padding="10" BackgroundColor="White" HasShadow="False">
+                                <Grid ColumnSpacing="10" RowSpacing="0" ColumnDefinitions="60, *" RowDefinitions="Auto, Auto">
+                                    <Image Grid.Column="0" Source="{Binding Img}"  Grid.RowSpan="2" />
+                                    <Label FontAttributes="Bold" Grid.Row="0" Grid.Column="1" x:Name="des" Text="{Binding Author}" />
+                                    <Label Grid.Row="1" LineBreakMode="TailTruncation" MaxLines="2" Grid.Column="1" Text="{Binding Description}" />
+                                </Grid>
+                            </Frame>
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"       
+             BackgroundColor="#F3F4FA"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Quotes.Features.QuoteDetailView">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="80, 250">
+
+            <Frame Padding="0,10" BackgroundColor="Transparent" Grid.Row="0" HasShadow="False">
+                <Image Margin="30,0" WidthRequest="20" HeightRequest="20" VerticalOptions="EndAndExpand" HorizontalOptions="Start" Source="arrow" Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="tapped_back"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+
+            <Frame Margin="30,0" HasShadow="False" Grid.Row="1">
+                <StackLayout>
+                    <Label FontSize="Large" FontAttributes="Bold" x:Name="author" />
+                    <Label FontSize="Medium" x:Name="description" />
+                    <Button Clicked="tapped_TranslateDescription" HorizontalOptions="Start" Text="Traduccir" />
+                    <Label x:Name="descriptionTranslate" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
