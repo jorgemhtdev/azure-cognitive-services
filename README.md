@@ -2,6 +2,6 @@
 
 ## Translator - App Quotes
 
-Code:
+Code: https://github.com/jorgemhtdev/AzureCognitiveServices/tree/main/Quotes
 
-Design:
+Design:https://dribbble.com/shots/14744484-UI-Design-Quotes-dise-ado-en-Sketch-para-ios
